@@ -1,0 +1,98 @@
+
+/*.text{
+  width:35%;
+  float:left;
+  margin-left:8%;
+  margin-top:6%;
+}
+
+#chart3{
+  width:45%;
+  float:right;
+  margin-top:6%;
+
+  margin-right:6%;
+  height:350px;
+}*/
+
+body{padding-top:50px}
+
+#map1{
+/*margin:auto;this centers the map*/
+height: 600px; /*600, 800*/
+width:800px;
+
+}
+
+#map1-spacing{
+  margin-left:5%;
+}
+
+#text-spacing{
+  margin-top:6%;
+  font-family:Georgia, serif;
+
+}
+#the-world{
+  font-family:Arial;
+}
+
+#intro{
+  margin-top:6%; /*10*/
+  margin-left:6%;
+  margin-right:5%;
+
+  font-family:Georgia, serif;
+}
+
+
+#centered{
+
+font-family:"Olde English";
+color:black;
+font-size:20px;
+margin-left:15px;
+float:left;
+}
+.btn{
+float:right;
+  margin-right:2%;
+  background-color:#6288A5;
+  color:white;
+
+}
+
+#chart3{
+
+height:350px;
+}
+
+#example{
+  padding:2%;
+
+}
+
+@media (max-width: 780px) {
+  #map1{
+    margin:auto;
+    height: 400px;
+    width:600px;
+  }
+
+  }
+  @media (max-width: 555px) {
+    #map1{
+      margin:auto;
+      height: 400px;
+      width:500px;
+    }
+
+    }
+    @media (max-width: 495px) {
+      #map1{
+        margin:auto;
+        height: 300px;
+        width:400px;
+      }
+
+      }
