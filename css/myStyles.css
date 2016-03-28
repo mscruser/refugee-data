@@ -73,7 +73,7 @@ float:left;
 .btn{
 float:right;
   margin-right:2%;
-  background-color:#6288A5;
+  background-color:#326891;
   color:white;
 
 }
@@ -83,7 +83,9 @@ float:right;
 height:350px;
 }
 
-
+#example{
+  font-family:Arial;
+}
 
 @media (max-width: 780px) {
   #map1{

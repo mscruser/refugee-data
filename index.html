@@ -19,11 +19,14 @@
   </head>
 
 
-<!--color:#6288A5-->
+<!--color:#6288A5     #326891-->
+
 
   <body>
 
     <nav class="navbar navbar-default navbar-fixed-top">
+
+
 <p class="navbar-text" id= "centered">The New York Times</p>
 <button type="button" class="btn btn-default navbar-btn btn-sm">SUBSCRIBE NOW</button>
         </nav>
@@ -34,7 +37,7 @@
 <p id="the-world"><b>THE WORLD</b></p>
 
 
-    <h1><b>Refugees: From Home to United States of America</b></h1>
+    <h1>Refugees: From Home to United States of America</h1>
 
     <p>The refugee crisis has been on the forefront of the American mind since the Syiran conflict once again highlighted
       the difficulties of refugees worldwide. </p>
@@ -53,17 +56,23 @@
 <div class="row">
 <!--or get rid of the bootstrap stuff to make it go back to being centered-->
 <!--maybe try negative padding on the map-->
-  <div id="map1-spacing">
-  <div id="map1" class="col-sm-12 col-md-8 "></div> </div>
-<div id= "text-spacing" class="col-sm-12 col-md-3">
-  <h3><b> Where in the U.S. are the refugees settling?</b></h3>
+<div id= "text-spacing" class="col-sm-12 col-md-3 col-md-push-8">
+  <h3> Where in the U.S. are the refugees settling?</h3>
   <p>Texas took in the largest number of refugees in 2014, followed by California, New York and Michigan.</p>
   <p> That may be changing soon. According to Quartz, Texas governor Greg Abbott is now refusing to accept Syrian refugees.
+  <p>Not a single refugee has settled in Montana or Wyoming. Other unpopular states for refugee settlement
+    include Mississippi and Arkansas, which have 7 each, and Hawaii, which only has 2 refugees.</p>
+    <p> Roll over the map to see exactly how many refugees have settled in each state.</p>
 </p>
 </div>
+
+
+  <div id="map1-spacing">
+  <div id="map1" class="col-sm-12 col-md-8 col-md-pull-3 "></div> </div>
+
 </div>
 <div id="info">
-<p><h3><b> Who are these refugees?</b></h3> The following pie graphs give a demographic breakdown of the refugees entering the U.S. in fiscal year
+<p><h3> Who are these refugees?</h3> The following pie graphs give a demographic breakdown of the refugees entering the U.S. in fiscal year
   2013. Slightly more men than women entered the U.S. The majority were either single or married, and in the age group 20-44 (or, typical adults). </p>
 </div>
 
@@ -74,13 +83,13 @@
 </div>
 
 <div id="info">
-<p><h3><b> Where are the refugees coming from?</b></h3> Find out which countries have sent the most refugees to the U.S.
+<p><h3> Where are the refugees coming from?</h3> Find out which countries have sent the most refugees to the U.S.
   between 2010 and 2013. You can also search by country to find out how refugee exit from that country
 has changed over the years.</p>
 </div>
 
 <div class=container>
-<table id="example" class="display" cellspacing="0" width="100%">
+<table id="example" class="row-border hover" cellspacing="0" width="100%"> <!--display-->
 <!--responsiveness should work with 4 columns- years 2010-2013-->
         <thead>
             <tr>
@@ -167,7 +176,7 @@ function buildChart3(){
         },
         plotOptions:{
           line:{
-            color:'#6288A5'
+            color:'#326891'
           }
         },
         xAxis: {
@@ -261,12 +270,12 @@ function buildChart3(){
             colorAxis: {
                 min: 1,
                 type: 'logarithmic',  /*these 5 lines change the color of the map */
-                minColor: '#EEEEFF', /*eeeeff, 000022, efeff, 4444ff, 000022*/
-                maxColor: '#000022',
+                minColor: '#A0D9FF', /*eeeeff, 000022, efeff, 4444ff, 000022  */
+                maxColor: '#0F487F', /*90bee1, 2e3d48, 0091ff, 326891, 2e3d48*/
                 stops: [
-                    [0, '#EFEFFF'],
-                    [0.67, '#4444FF'],
-                    [1, '#000022']
+                    [0, '#A0D9FF'], /*5891C8*/
+                    [0.67, '#82B3DE'], /*346DA4*/
+                    [1, '#0F487F']   /*214661*/
                 ]
             },
 
@@ -294,6 +303,24 @@ function buildChart3(){
 
 
     function buildPie1(){
+      Highcharts.getOptions().plotOptions.pie.colors = (function () {
+              var colors = [],
+                  base = Highcharts.getOptions().colors[0],
+                  i;
+
+              for (i = 0; i < 10; i += 1) {
+                  // Start out with a darkened base color (negative brighten), and end
+                  // up with a much brighter color
+                  colors.push(Highcharts.Color(base).brighten((i - 2) / 7).get());
+              }
+              return colors;
+          }());
+
+
+
+
+
+
       $('#pie1').highcharts({
             chart: {
                 plotBackgroundColor: null,
@@ -315,7 +342,10 @@ function buildChart3(){
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
-                        enabled: false
+                        enabled: false,
+                        style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
                     },
                     showInLegend: true
                 }
