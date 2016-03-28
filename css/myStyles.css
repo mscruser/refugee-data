@@ -31,8 +31,24 @@ width:800px;
 #text-spacing{
   margin-top:6%;
   font-family:Georgia, serif;
+margin-left:3%;
 
 }
+
+#info{
+  font-family: Georgia, serif;
+  margin-right:5%;
+  margin-left:5%;
+
+
+}
+
+#pies{
+  margin-bottom:4%;
+
+}
+
+
 #the-world{
   font-family:Arial;
 }
@@ -67,10 +83,7 @@ float:right;
 height:350px;
 }
 
-#example{
-  padding:2%;
 
-}
 
 @media (max-width: 780px) {
   #map1{

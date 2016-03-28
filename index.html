@@ -34,7 +34,7 @@
 <p id="the-world"><b>THE WORLD</b></p>
 
 
-    <h1>Refugees: From Home to United States of America</h1>
+    <h1><b>Refugees: From Home to United States of America</b></h1>
 
     <p>The refugee crisis has been on the forefront of the American mind since the Syiran conflict once again highlighted
       the difficulties of refugees worldwide. </p>
@@ -55,14 +55,29 @@
 <!--maybe try negative padding on the map-->
   <div id="map1-spacing">
   <div id="map1" class="col-sm-12 col-md-8 "></div> </div>
-<div id= "text-spacing" class="col-sm-12 col-md-4">
-  <h4> Where in the U.S. are the refugees settling?</h4>
+<div id= "text-spacing" class="col-sm-12 col-md-3">
+  <h3><b> Where in the U.S. are the refugees settling?</b></h3>
   <p>Texas took in the largest number of refugees in 2014, followed by California, New York and Michigan.</p>
   <p> That may be changing soon. According to Quartz, Texas governor Greg Abbott is now refusing to accept Syrian refugees.
 </p>
 </div>
 </div>
+<div id="info">
+<p><h3><b> Who are these refugees?</b></h3> The following pie graphs give a demographic breakdown of the refugees entering the U.S. in fiscal year
+  2013. Slightly more men than women entered the U.S. The majority were either single or married, and in the age group 20-44 (or, typical adults). </p>
+</div>
 
+<div id="pies" class="row">
+  <div id="pie1" class="col-sm-12 col-md-4" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  <div id="pie2" class="col-sm-12 col-md-4" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  <div id="pie3" class="col-sm-12 col-md-4" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+</div>
+
+<div id="info">
+<p><h3><b> Where are the refugees coming from?</b></h3> Find out which countries have sent the most refugees to the U.S.
+  between 2010 and 2013. You can also search by country to find out how refugee exit from that country
+has changed over the years.</p>
+</div>
 
 <div class=container>
 <table id="example" class="display" cellspacing="0" width="100%">
@@ -70,12 +85,7 @@
         <thead>
             <tr>
                 <th>Country of Nationality</th>
-                <th>2004</th>
-                <th>2005</th>
-                <th>2006</th>
-                <th>2007</th>
-                <th>2008</th>
-                <th>2009</th>
+
                 <th>2010</th>
                 <th>2011</th>
                 <th>2012</th>
@@ -86,12 +96,7 @@
         <tfoot>
             <tr>
               <th>Country of Nationality</th>
-              <th>2004</th>
-              <th>2005</th>
-              <th>2006</th>
-              <th>2007</th>
-              <th>2008</th>
-              <th>2009</th>
+
               <th>2010</th>
               <th>2011</th>
               <th>2012</th>
@@ -126,6 +131,9 @@
       /*buildChart1();*/
       buildMap1();
       /*buildChart2();*/
+      buildPie1();
+      buildPie2();
+      buildPie3();
       buildChart3();
       $('#example').DataTable( {
 
@@ -282,6 +290,159 @@ function buildChart3(){
         });
     });
     }
+
+
+
+    function buildPie1(){
+      $('#pie1').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                style: {
+                  fontFamily: 'Georgia',
+                }
+            },
+            title: {
+                text: 'Gender'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Gender',
+                colorByPoint: true,
+                data: [{
+                    name: 'Men',
+                    y: 54.06
+                }, {
+                    name: 'Women',
+                    y: 45.94,
+                    sliced: true,
+                    selected: true
+                }]
+            }]
+        });
+    }
+    function buildPie2(){
+      $('#pie2').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                style: {
+                  fontFamily: 'Georgia',
+                }
+            },
+            title: {
+                text: 'Marital Status'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Status',
+                colorByPoint: true,
+                data: [{
+                    name: 'Single',
+                    y: 56.35
+                }, {
+                    name: 'Married',
+                    y: 38.32,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Widowed',
+                    y: 2.77
+                }, {
+                    name: 'Divorced/Separated',
+                    y: 2.52
+                }, {
+                    name: 'Unknown',
+                    y: 0.05
+                }]
+            }]
+        });
+    }
+
+
+    function buildPie3(){
+      $('#pie3').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                style: {
+                  fontFamily: 'Georgia',
+                }
+            },
+            title: {
+                text: 'Age'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Age',
+                colorByPoint: true,
+                data: [{
+                    name: 'Less than 15',
+                    y: 28.56
+                }, {
+                    name: '15-19',
+                    y: 9.08,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: '20-44',
+                    y: 46.63
+                }, {
+                    name: '45-74',
+                    y: 14.82
+                }, {
+                    name: '75+',
+                    y: 0.90
+
+                }]
+            }]
+        });
+    }
+
+
+
 
 
           </script>
