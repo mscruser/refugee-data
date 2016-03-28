@@ -1,25 +1,8 @@
 
-/*.text{
-  width:35%;
-  float:left;
-  margin-left:8%;
-  margin-top:6%;
-}
-
-#chart3{
-  width:45%;
-  float:right;
-  margin-top:6%;
-
-  margin-right:6%;
-  height:350px;
-}*/
-
 body{padding-top:50px}
 
 #map1{
-/*margin:auto;this centers the map*/
-height: 600px; /*600, 800*/
+height: 600px;
 width:800px;
 
 }
@@ -35,17 +18,25 @@ margin-left:3%;
 
 }
 
+a:link{
+  color: black;
+text-decoration: none;
+border-bottom: 1px solid #326891;
+
+}
+
+#font{
+  font-family:Georgia, serif;
+}
+
 #info{
   font-family: Georgia, serif;
   margin-right:5%;
   margin-left:5%;
-
-
 }
 
 #pies{
   margin-bottom:4%;
-
 }
 
 
@@ -54,24 +45,23 @@ margin-left:3%;
 }
 
 #intro{
-  margin-top:6%; /*10*/
+  margin-top:6%;
   margin-left:6%;
   margin-right:5%;
-
   font-family:Georgia, serif;
 }
 
 
 #centered{
-
-font-family:"Olde English";
-color:black;
-font-size:20px;
-margin-left:15px;
-float:left;
+  font-family:"Olde English";
+  color:black;
+  font-size:20px;
+  margin-left:15px;
+  float:left;
 }
+
 .btn{
-float:right;
+  float:right;
   margin-right:2%;
   background-color:#326891;
   color:white;
@@ -79,14 +69,27 @@ float:right;
 }
 
 #chart3{
-
-height:350px;
+  height:350px;
 }
 
 #example{
-  font-family:Arial;
+  font-family:Georgia;
+
+}
+#example_info{
+  font-family:Georgia, serif;
+  font-weight:bold;
 }
 
+.previous{
+  font-family:Georgia, serif;
+  font-weight:bold;
+
+}
+.next{
+  font-family:Georgia, serif;
+  font-weight:bold;
+}
 @media (max-width: 780px) {
   #map1{
     margin:auto;
